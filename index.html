@@ -28,6 +28,13 @@
 
                 setStatus = function(s) {
                     status.textContent = s;
+
+                    if(s !== statusDefault) {
+                        var delay = setTimeout(function() {
+                            setStatus(statusDefault);
+                            clearInterval(delay);
+                        }, 3000);
+                    }
                 };
 
                 setStatus('Testing');
