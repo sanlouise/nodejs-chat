@@ -33,15 +33,19 @@
         //Listen for output
         socket.on('output', function(data) {
             if(data.length) {
-                //loop through results
+                //Loop through all the results
                 for(var x = 0; x < data.length; x = x + 1) {
+                    //Create new div
                     var message = document.createElement('div');
 
                     message.setAttribute('class', 'chat-message');
+                    //Data contains the message and the name
                     message.textContent = data[x].name + ': ' + data[x].message;
 
                     //Append
+                    //Messages is the main container
                     messages.appendChild(message);
+                    //The last message shows at the top
                     messages.insertBefore(message, messages.firstChild);
                 }
             }
