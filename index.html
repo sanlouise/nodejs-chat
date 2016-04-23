@@ -31,7 +31,13 @@
                     //Set the status to warn the user
                 }
                 if(socket != undefined) {
-                    console.log('Ok');
+
+                    // Listen for key presses. We can now do this because we set up the nodes already.
+                    textarea.addEventListener('keydown', function(event) {
+                        var self = this,
+                        name = chatName.value;
+
+                    });
                 }
 
             })();
