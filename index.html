@@ -20,8 +20,17 @@
                     return document.querySelector(s);
                 },
                 //Get the nodes. Allow access to the HTML elements.
+                status = getNode('.chat-status span'),
                 textarea = getNode('.chat textarea'),
-                chatName = getNode('.chat-name');
+                chatName = getNode('.chat-name'),
+
+                statusDefault = status.textContent,
+
+                setStatus = function() {
+
+                };
+
+                console.log
 
                 //Try connection to server
 
@@ -32,11 +41,28 @@
                 }
                 if(socket != undefined) {
 
-                    // Listen for key presses. We can now do this because we set up the nodes already.
+                    // Listen for status
+
+                    socket.on('status', function(data) {
+                        setStatus();
+                    });
+
+
+                    //  Listen for key presses. We can now do this because we set
+                    // up the nodes already.
                     textarea.addEventListener('keydown', function(event) {
                         var self = this,
                         name = chatName.value;
 
+                    //Check for enter key press - with shift it should not send.
+                    if(event.which === 13 && event.shiftKey === false ) {
+                        socket.emit('input', {
+                            name: name,
+                            message: self.value
+                        });
+                        //Prevent default behavior keydown
+                        event.preventDefault
+                    }
                     });
                 }
 
