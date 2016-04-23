@@ -13,5 +13,28 @@
         </div>
 
         <script src="http://127.0.0.1:8080/socket.io/socket.io.js"> </script>
+        <script>
+            (function() {
+                //No need for jQuery - this will not work on all browsers.
+                var getNode = function(s) {
+                    return document.querySelector(s);
+                },
+                //Get the nodes. Allow access to the HTML elements.
+                textarea = getNode('.chat textarea'),
+                chatName = getNode('.chat-name');
+
+                //Try connection to server
+
+                try {
+                    var socket = io.connect('http://127.0.0.1:8080');
+                } catch(e) {
+                    //Set the status to warn the user
+                }
+                if(socket != undefined) {
+                    console.log('Ok');
+                }
+
+            })();
+        </script>
     </body>
 </html>
