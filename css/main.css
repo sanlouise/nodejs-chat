@@ -31,7 +31,6 @@ input {
     padding: 10px;
     border-bottom: 0;
     margin: 0;
-    outline: none;
 }
 
 .chat textarea {
@@ -39,7 +38,6 @@ input {
     padding:10px;
     margin:0;
     border-top:0;
-    outline: none;
     /*Cannot drag the box horizontally*/
     max-width: 100%
 
