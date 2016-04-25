@@ -16,6 +16,7 @@ main {
 
 .chat {
     max-width:500px;
+    margin-top: 70px;
 }
 
 .chat-messages,
@@ -54,5 +55,6 @@ main {
 }
 
 .chat-status {
+    margin-top: 20px;
     color:#bbb;
 }
