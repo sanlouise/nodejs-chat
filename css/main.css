@@ -4,6 +4,16 @@ input {
     font: 13px "Trebuchet MS", sans-serif;
 }
 
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
 .chat {
     max-width:500px;
 }
